@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" rel="stylesheet"/>
+    <title>名刺一覧</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+</head>
+<body>
+<h1> 名刺一覧 </h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>id</th>
+        <th>会社</th>
+        <th>部署</th>
+        <th>肩書</th>
+        <th>氏名</th>
+        <th>住所</th>
+        <th>電話番号</th>
+        <th>メールアドレス</th>
+    </tr>
+    <tr th:each="card : ${cardList}">
+        <td th:text="${card.id}"></td>
+        <td th:text="${card.company}"></td>
+        <td th:text="${card.section}"></td>
+        <td th:text="${card.title}"></td>
+        <td th:text="${card.name}"></td>
+        <td th:text="${card.address}"></td>
+        <td th:text="${card.telNumber}"></td>
+        <td th:text="${card.mailAddress}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
